@@ -1,0 +1,149 @@
+@font-face {
+  font-family: 'Roboto';
+  src: url('roboto.eot');
+  src: url('roboto.eot?#iefix') format('embedded-opentype'),
+  url('roboto.svg#svgFontName') format('svg');
+}
+
+body{
+  margin: 0;
+  background: #222;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+}
+
+/*flex*/
+.flex{
+  flex-basis: 100%;
+}
+.x3{
+  flex-basis: 50%!important;
+}
+.x2{
+  flex-basis: 25%!important;
+}
+@media screen and (min-width: 768px) {
+  .row {
+    display: flex;
+    display: -ms-flexbox;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+  .flex {
+    flex: 1;
+    -ms-flex: 1;
+  }
+}
+@media screen and (max-width: 768px) {
+  .row {
+    display: flex;
+    display: -ms-flexbox;
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+  .flex {
+    flex: 1 1 auto;
+  }
+}
+
+.tube{
+  margin: 0 auto;
+  margin-top: 5%;
+  height: 500px;
+  width: 100px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  background: #3c3840;
+  position: relative;
+  border-left: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.tube:before{
+  content: "";
+  border-left: 2px solid rgba(255, 255, 255, 0.5);
+  position: absolute;
+  width: 125px;
+  height: 20px;
+  border-radius: 10px;
+  background: #3c3840;
+  top: 0;
+  left:-14px;
+  right: 0;
+  margin: 0 auto;
+}
+
+.glint{
+  width: 10px;
+  position: absolute;
+  top: 10%;
+  bottom: 10%;
+  right: 20%;
+  border-radius: 5px;
+  background: rgba(255,255,255, 0.4);
+  z-index: 10;
+}
+
+.box {
+  width: 80px;
+  height: 300px;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  bottom: 10px;
+  border-radius: 40px;
+  position: absolute;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0) scaleY(-1);
+}
+
+.waveA{
+    filter: hue-rotate(180deg);
+}
+.waveB{
+    filter: hue-rotate(280deg);
+}
+.waveC{
+    filter: hue-rotate(20deg);
+}
+
+.wave {
+  position: absolute;
+  top: 3%;
+  left: 50%;
+  background: radial-gradient(ellipse at center, #92596a 0%, rgba(150,44,75,1) 17%, rgba(255,192,115,1) 72%, rgba(255,192,115,1) 100%);
+  width: 500px;
+  height: 500px;
+  margin-left: -250px;
+  margin-top: -250px;
+  transform-origin: 50% 48%;
+  border-radius: 43%;
+  animation: boil 3000ms infinite linear;
+}
+
+.wave.-three {
+  animation: boil 5000ms infinite linear;
+}
+
+.wave.-two {
+  animation: boil 7000ms infinite linear;
+}
+
+.box:after {
+  content: '';
+  display: block;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 11;
+  transform: translate3d(0, 0, 0);
+}
+
+@-webkit-keyframes boil {
+  from {
+    transform: rotate(0deg);
+  }
+  from {
+    transform: rotate(360deg);
+  }
+}
